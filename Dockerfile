@@ -14,6 +14,7 @@ COPY . .
 
 RUN yarn config set registry $VERDACCIO_BUILD_REGISTRY && \
     yarn install --production=false && \
+    npm config set scripts-prepend-node-path auto && \
     yarn lint && \
     yarn code:docker-build && \
     yarn cache clean && \
