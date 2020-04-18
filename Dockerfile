@@ -41,8 +41,6 @@ RUN mkdir -p /verdaccio/storage /verdaccio/plugins /verdaccio/conf
 
 COPY --from=builder /opt/verdaccio-build .
 
-ADD conf/docker.yaml /verdaccio/conf/config.yaml
-
 RUN adduser -u $VERDACCIO_USER_UID -S -D -h $VERDACCIO_APPDIR -g "$VERDACCIO_USER_NAME user" -s /sbin/nologin $VERDACCIO_USER_NAME && \
     chmod -R +x $VERDACCIO_APPDIR/bin $VERDACCIO_APPDIR/docker-bin && \
     chown -R $VERDACCIO_USER_UID:root /verdaccio/storage && \
@@ -52,7 +50,7 @@ USER $VERDACCIO_USER_UID
 
 EXPOSE $VERDACCIO_PORT
 
-VOLUME /verdaccio/storage
+VOLUME /verdaccio/conf
 
 ENTRYPOINT ["uid_entrypoint"]
 
