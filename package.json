@@ -20,6 +20,7 @@
     "url": "https://opencollective.com/verdaccio"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "^2.0.0",
     "@verdaccio/commons-api": "^9.3.2",
     "@verdaccio/local-storage": "^9.3.4",
     "@verdaccio/readme": "^9.3.3",
