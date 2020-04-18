@@ -125,7 +125,7 @@
     "pre:ci": "npm run lint",
     "coverage:publish": "codecov",
     "lint": "npm run type-check && npm run lint:ts && npm run lint:lockfile",
-    "lint:ts": "eslint . --ext .js,.ts",
+    "lint:ts": "eslint . --ext .js,.ts --fix || true",
     "lint:lockfile": "lockfile-lint --path yarn.lock --type yarn --validate-https --allowed-hosts verdaccio npm yarn",
     "format": "prettier --single-quote --trailing-comma none --write \"{src,test}/**/*.ts\"",
     "dev:start": "cross-env BABEL_ENV=registry babel-node --extensions \".ts,.tsx\" src/lib/cli",
