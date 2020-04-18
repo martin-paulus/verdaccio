@@ -18,8 +18,7 @@ RUN yarn config set registry $VERDACCIO_BUILD_REGISTRY && \
     yarn lint && \
     yarn code:docker-build && \
     yarn cache clean && \
-    yarn install --production=true && \
-    yarn add verdaccio-aws-s3-storage@latest --audit
+    yarn install --production=true
 
 
 
